@@ -11,7 +11,8 @@ bot.onText(/\/rules/, function (msg, match) {
   var chatId = msg.chat.id;
   var rules = [
     "You do not joke about getting accepted before May 9",
-    "In order to say you got accepted, you must show proof in the form of screenshot of email"
+    "In order to say you got accepted, you must show proof in the form of screenshot of email",
+    "If it violates the MLH code of conduct, it probably violates this group's code of conduct too."
   ];
   var rulesText = "The following are the rules for the WWDCScholars Telegram group: \n";
   for(var i = 0;i<rules.length;i++){
