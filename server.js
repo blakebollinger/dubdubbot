@@ -6,3 +6,13 @@ bot.on('new_chat_participant', function(msg){
   var photo = "M1aF0.png";
   bot.sendPhoto(chatId, photo, {caption: 'Hello and welcome to the WWDC Scholars Telegram group! Here you can discuss pretty much anything with us, so feel free to start chatting!'});
 });
+// Matches /echo [whatever]
+bot.onText(/\/rules/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var rules = [
+    "You do not joke about getting accepted before May 9"
+  ];
+  for(var i = 0;i<rules.length;i++){
+    bot.sendMessage(chatId, rules[i]);  
+  }
+});
