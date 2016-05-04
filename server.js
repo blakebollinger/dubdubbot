@@ -27,3 +27,8 @@ bot.onText(/\/links/, function (msg, match) {
     bot.sendMessage(chatId, links[i]);
   }
 });
+
+bot.onText(/\/help/, function (msg, match) {
+  var chatId = msg.chat.id;
+  bot.sendMessage(chatId, "/rules to see the ruls \n /links for links to other groups");
+});
