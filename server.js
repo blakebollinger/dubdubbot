@@ -12,7 +12,8 @@ bot.onText(/\/rules/, function (msg, match) {
   var rules = [
     "You do not joke about getting accepted before May 9"
   ];
+  bot.sendMessage(chatId, "The following are the rules for this chat:");
   for(var i = 0;i<rules.length;i++){
-    bot.sendMessage(chatId, rules[i]);  
+    bot.sendMessage(chatId, ""+(i+1)+". "+rules[i]);
   }
 });
