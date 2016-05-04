@@ -16,3 +16,14 @@ bot.onText(/\/rules/, function (msg, match) {
     bot.sendMessage(chatId, ""+(i+1)+". "+rules[i]);
   }
 });
+
+bot.onText(/\/links/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var links = [
+    "Facebook: https://www.facebook.com/groups/1723154624629772/",
+    "Gitter: https://gitter.im/WWDCScholars/WWDCScholarsHQ"
+  ];
+  for(var i = 0;i<rules.length;i++){
+    bot.sendMessage(chatId, links[i]);
+  }
+});
