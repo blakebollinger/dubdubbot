@@ -13,7 +13,7 @@ bot.onText(/\/rules/, function (msg, match) {
     "You do not joke about getting accepted before May 9",
     "In order to say you got accepted, you must show proof in the form of screenshot of email"
   ];
-  var rulesText = "";
+  var rulesText = "The following are the rules for the WWDCScholars Telegram group: \n";
   for(var i = 0;i<rules.length;i++){
     rulesText+=(""+(i+1)+". "+rules[i]+" \n");
   }
@@ -23,14 +23,16 @@ bot.onText(/\/rules/, function (msg, match) {
 bot.onText(/\/links/, function (msg, match) {
   var chatId = msg.chat.id;
   var links = [
-    "Facebook: https://www.facebook.com/groups/1723154624629772/",
+    "Facebook: https://www.facebook.com/groups/1723154624629772/"
   ];
+  var linksText = "The following are various WWDCScholars links: \n";
   for(var i = 0;i<links.length;i++){
-    bot.sendMessage(chatId, links[i]);
+    rulesText+=(""+(i+1)+". "+links[i]+" \n");
   }
+  bot.sendMessage(chatId, linksText);
 });
 
 bot.onText(/\/help/, function (msg, match) {
   var chatId = msg.chat.id;
-  bot.sendMessage(chatId, "/rules to see the ruls \n /links for links to other groups");
+  bot.sendMessage(chatId, "/rules to see the ruls \n/links for links to other groups");
 });
