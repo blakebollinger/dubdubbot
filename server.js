@@ -12,7 +12,8 @@ bot.onText(/\/rules/, function (msg, match) {
   var rules = [
     "You do not joke about getting accepted before May 9",
     "In order to say you got accepted, you must show proof in the form of screenshot of email",
-    "If it violates the MLH code of conduct, it probably violates this group's code of conduct too."
+    "If it violates the MLH code of conduct, it probably violates this group's code of conduct too.",
+    "Please avoid swearing. What counts as swearing is based on your own (hopefully) good judgement."
   ];
   var rulesText = "The following are the rules for the WWDCScholars Telegram group: \n";
   for(var i = 0;i<rules.length;i++){
