@@ -16,8 +16,8 @@ bot.onText(/\/rules/, function (msg, match) {
   var rulesText = "";
   for(var i = 0;i<rules.length;i++){
     rulesText+=(""+(i+1)+". "+rules[i]+" \n");
-    bot.sendMessage(chatId, rulesText);
   }
+  bot.sendMessage(chatId, rulesText);
 });
 
 bot.onText(/\/links/, function (msg, match) {
