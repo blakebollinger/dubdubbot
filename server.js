@@ -11,7 +11,7 @@ bot.on('new_chat_participant', function(msg){
 });
 
 // Matches /echo [whatever]
-bot.onText("/welcome", function (msg, match) {
+bot.onText("/\/echo (.+)/", function (msg, match) {
   var chatId = msg.chat.id;
   var photo = "M1aF0.png";
   bot.sendPhoto(chatId, photo, {caption: 'Hello and welcome to the WWDC Scholars Telegram group! Here you can discuss pretty much anything with us, so feel free to start chatting!'});
