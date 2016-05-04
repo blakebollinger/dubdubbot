@@ -27,7 +27,7 @@ bot.onText(/\/links/, function (msg, match) {
   ];
   var linksText = "The following are various WWDCScholars links: \n";
   for(var i = 0;i<links.length;i++){
-    linksText+=(""+(i+1)+". "+links[i]+" \n");
+    linksText+=(links[i]+" \n");
   }
   bot.sendMessage(chatId, linksText);
 });
