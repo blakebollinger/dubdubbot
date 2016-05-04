@@ -23,7 +23,7 @@ bot.onText(/\/links/, function (msg, match) {
     "Facebook: https://www.facebook.com/groups/1723154624629772/",
     "Gitter: https://gitter.im/WWDCScholars/WWDCScholarsHQ"
   ];
-  for(var i = 0;i<rules.length;i++){
+  for(var i = 0;i<links.length;i++){
     bot.sendMessage(chatId, links[i]);
   }
 });
