@@ -10,10 +10,13 @@ bot.on('new_chat_participant', function(msg){
 bot.onText(/\/rules/, function (msg, match) {
   var chatId = msg.chat.id;
   var rules = [
-    "You do not joke about getting accepted before May 9"
+    "You do not joke about getting accepted before May 9",
+    "In order to say you got accepted, you must show proof in the form of screenshot of email"
   ];
+  var rulesText = "";
   for(var i = 0;i<rules.length;i++){
-    bot.sendMessage(chatId, ""+(i+1)+". "+rules[i]);
+    rulesText+=(""+(i+1)+". "+rules[i]+" \n");
+    bot.sendMessage(chatId, rulesText);
   }
 });
 
