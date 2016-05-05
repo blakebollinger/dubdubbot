@@ -1,6 +1,7 @@
 var TelegramBot = require('node-telegram-bot-api');
 var token = "225680439:AAFi0r47Wab1n_p8sdGApuEmP79xPg0a59g";
 var bot = new TelegramBot(token, {polling:true});
+var languages=[];
 bot.on('new_chat_participant', function(msg){
   var chatId = msg.chat.id;
   var photo = "rejection.jpg";
@@ -72,3 +73,20 @@ setInterval(function(){
     bot.sendMessage(-140432272, longString);
   }
 }, 3600000);
+
+
+// Matches /echo [whatever]
+bot.onText(/\/addlanguage (.+)/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var resp = match[1];
+  languages.push(resp);
+});
+
+bot.onText(/\/languages/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var languageText="";
+  for(var i=0;i<languages.length;i++){
+    languageText+=languages[i]+" \n";
+  }
+  bot.sendMessage(chatId, chatId);
+});
