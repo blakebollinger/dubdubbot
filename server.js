@@ -46,3 +46,16 @@ bot.onText(/\/welcome/, function (msg, match) {
   var photo = "rejection.jpg";
   bot.sendPhoto(chatId, photo, {caption: 'Hello and welcome to the WWDC Scholars Telegram group! Here you can discuss pretty much anything with us, so feel free to start chatting!'});
 });
+
+function howlong(){
+  var now = new Date();
+  var then = new Date(1462820400000);
+  var soo = the.getDate() - now.getDate();
+  return soo;
+}
+
+bot.onText(/\/howlong/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var longString = "There are " + howlong() +" days until you find out. Be patient!";
+  bot.sendMessage(chatId, longString);
+});
