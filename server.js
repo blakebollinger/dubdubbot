@@ -59,3 +59,8 @@ bot.onText(/\/howlong/, function (msg, match) {
   var longString = "There are " + howlong() +" days until you find out. Be patient!";
   bot.sendMessage(chatId, longString);
 });
+
+bot.onText(/\/chatId/, function (msg, match) {
+  var chatId = msg.chat.id;
+  bot.sendMessage(chatId, chatId);
+});
