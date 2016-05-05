@@ -25,7 +25,8 @@ bot.onText(/\/rules/, function (msg, match) {
 bot.onText(/\/links/, function (msg, match) {
   var chatId = msg.chat.id;
   var links = [
-    "Facebook: https://www.facebook.com/groups/1723154624629772/"
+    "Facebook: https://www.facebook.com/groups/1723154624629772/",
+    "Gitter: https://gitter.im/WWDCScholars/WWDCScholarsHQ"
   ];
   var linksText = "The following are various WWDCScholars links: \n";
   for(var i = 0;i<links.length;i++){
