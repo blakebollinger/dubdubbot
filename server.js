@@ -88,5 +88,5 @@ bot.onText(/\/languages/, function (msg, match) {
   for(var i=0;i<languages.length;i++){
     languageText+=languages[i]+" \n";
   }
-  bot.sendMessage(chatId, chatId);
+  bot.sendMessage(chatId, languageText);
 });
