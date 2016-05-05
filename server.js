@@ -1,6 +1,7 @@
 var TelegramBot = require('node-telegram-bot-api');
 var token = "225680439:AAFi0r47Wab1n_p8sdGApuEmP79xPg0a59g";
 var bot = new TelegramBot(token, {polling:true});
+var since;
 var languages=[];
 bot.on('new_chat_participant', function(msg){
   var chatId = msg.chat.id;
@@ -58,7 +59,13 @@ function howlong(){
 bot.onText(/\/howlong/, function (msg, match) {
   var chatId = msg.chat.id;
   var longString = "There are " + howlong() +" days until you find out. Be patient!";
-  bot.sendMessage(chatId, longString);
+  var now = new Date();
+  if (since > (now - 600000)){
+    bot.sendMessage(chatId, longString);
+  }else{
+    bot.sendMessage(chatId, "It's been less than 20 minutes since you last asked. Srsly.");
+  }
+  since = new Date();
 });
 
 bot.onText(/\/chatId/, function (msg, match) {
