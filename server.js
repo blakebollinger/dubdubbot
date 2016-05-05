@@ -64,3 +64,11 @@ bot.onText(/\/chatId/, function (msg, match) {
   var chatId = msg.chat.id;
   bot.sendMessage(chatId, chatId);
 });
+
+setInterval(function(){
+  var now = new Date();
+  if(now.getHours() == 13){
+    var longString = "There are " + howlong() +" days until you find out. Be patient!";
+    bot.sendMessage(-140432272, longString);
+  }
+}, 3600000);
