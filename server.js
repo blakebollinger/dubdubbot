@@ -83,6 +83,12 @@ bot.onText(/\/addlanguage (.+)/, function (msg, match) {
   languages.push(resp);
 });
 
+bot.onText(/\/addapp (.+)/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var resp = match[1];
+  bot.sendMessage(-1001058239312, resp);
+});
+
 bot.onText(/\/languages/, function (msg, match) {
   var chatId = msg.chat.id;
   var languageText="";
