@@ -52,13 +52,13 @@ bot.onText(/\/welcome/, function (msg, match) {
 function howlong(){
   var now = new Date();
   var then = new Date(1462820400000);
-  var soo = then.getMinutes() - now.getMinutes();
+  var soo = then.getDate() - now.getDate();
   return soo;
 }
 
 bot.onText(/\/howlong/, function (msg, match) {
   var chatId = msg.chat.id;
-  var longString = "There are " + howlong() +" minutes until you find out. Be patient!";
+  var longString = "There are " + howlong() +" days until you find out. Be patient!";
   bot.sendMessage(chatId, longString);
 });
 
