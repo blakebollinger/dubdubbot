@@ -69,7 +69,7 @@ bot.onText(/\/chatId/, function (msg, match) {
 
 setInterval(function(){
   var now = new Date();
-  if(now.getHours() == 13){
+  if(now.getHours() == 12 || now.getHours() == 0){
     var longString = "There are " + howlong() +" days until you find out. Be patient!";
     bot.sendMessage(-140432272, longString);
   }
