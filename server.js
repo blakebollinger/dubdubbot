@@ -63,7 +63,7 @@ bot.onText(/\/howlong/, function (msg, match) {
   if (since < (now + 600000)){
     bot.sendMessage(chatId, longString);
   }else{
-    bot.sendMessage(chatId, "It's been less than 20 minutes since you last asked. Srsly.");
+    bot.sendMessage(chatId, "It's been less than 10 minutes since you last asked. Srsly.");
   }
   since = new Date();
 });
