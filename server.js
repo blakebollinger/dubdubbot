@@ -3,6 +3,7 @@ var token = "225680439:AAFi0r47Wab1n_p8sdGApuEmP79xPg0a59g";
 var bot = new TelegramBot(token, {polling:true});
 var since = (new Date()) + 600001;
 var languages=[];
+var locations = [];
 bot.on('new_chat_participant', function(msg){
   var chatId = msg.chat.id;
   var photo = "rejection.jpg";
@@ -87,6 +88,21 @@ bot.onText(/\/addapp (.+)/, function (msg, match) {
   var chatId = msg.chat.id;
   var resp = match[1];
   bot.sendMessage(-1001058239312, resp);
+});
+
+bot.onText(/\/addlocation (.+)/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var resp = match[1];
+  locations.push(resp);
+});
+
+bot.onText(/\/locations/, function (msg, match) {
+  var chatId = msg.chat.id;
+  var locationText="";
+  for(var i=0;i<locations.length;i++){
+    locationText+=locations[i]+" \n";
+  }
+  bot.sendMessage(chatId, locationText);
 });
 
 bot.onText(/\/languages/, function (msg, match) {
