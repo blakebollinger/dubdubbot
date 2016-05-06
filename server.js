@@ -52,8 +52,8 @@ bot.onText(/\/welcome/, function (msg, match) {
 function howlong(){
   var now = new Date();
   var then = new Date(1462820400000);
-  var soo = then.getDate() - now.getDate();
-  return soo.getMinutes();
+  var soo = then.getMinutes() - now.getMinutes();
+  return soo();
 }
 
 bot.onText(/\/howlong/, function (msg, match) {
