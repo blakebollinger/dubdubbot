@@ -53,13 +53,19 @@ bot.onText(/\/welcome/, function (msg, match) {
 function howlong(){
   var now = new Date();
   var then = new Date(1462820400000);
-  var soo = then.getDate() - now.getDate();
-  return soo;
+  var then = new Date(1462820400000);
+  var diffMill = then.getTime() - now.getTime();
+  var mills = Math.floor(diffMill % 1000);
+  var secs = Math.floor(diffMill/1000) % 60;
+  var mins = Math.floor(diffMill/1000/60) % 60;
+  var hours = Math.floor(diffMill/1000/60/60) % 24;
+  var days = Math.floor(diffMill/1000/60/60/24);
+  return days + " days, " + hours + " hours, " + mins + " minutes, " + secs + " seconds, " + mills + " milliseconds";
 }
 
 bot.onText(/\/howlong/, function (msg, match) {
   var chatId = msg.chat.id;
-  var longString = "Not saying :D";
+  var longString = "There are " + howlong() +" left until you find out. Be patient!";
   bot.sendMessage(chatId, longString);
 });
 
@@ -71,7 +77,7 @@ bot.onText(/\/chatId/, function (msg, match) {
 setInterval(function(){
   var now = new Date();
   if(now.getHours() == 12 || now.getHours() == 0){
-    var longString = "There are " + howlong() +" days until you find out. Be patient!";
+    var longString = "There are " + howlong() +" left until you find out. Be patient!";
     bot.sendMessage(-140432272, longString);
   }
 }, 3600000);
