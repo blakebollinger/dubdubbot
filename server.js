@@ -59,13 +59,7 @@ function howlong(){
 bot.onText(/\/howlong/, function (msg, match) {
   var chatId = msg.chat.id;
   var longString = "There are " + howlong() +" days until you find out. Be patient!";
-  var now = new Date();
-  if (since < (now + 600000)){
-    bot.sendMessage(chatId, longString);
-  }else{
-    bot.sendMessage(chatId, "It's been less than 10 minutes since you last asked. Srsly.");
-  }
-  since = new Date();
+  bot.sendMessage(chatId, longString);
 });
 
 bot.onText(/\/chatId/, function (msg, match) {
