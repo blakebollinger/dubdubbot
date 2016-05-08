@@ -60,7 +60,7 @@ function howlong(){
   var mins = Math.floor(diffMill/1000/60) % 60;
   var hours = Math.floor(diffMill/1000/60/60) % 24;
   var days = Math.floor(diffMill/1000/60/60/24);
-  return days + " days, " + hours + " hours, " + mins + " minutes, " + secs + " seconds, " + mills + " milliseconds";
+  return days + " day, " + hours + " hours, " + mins + " minutes, " + secs + " seconds, " + mills + " milliseconds";
 }
 
 bot.onText(/\/howlong/, function (msg, match) {
